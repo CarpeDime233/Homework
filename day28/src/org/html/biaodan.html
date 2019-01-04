@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册表单</title>
+    <style>
+        span{color: crimson;font-size: 15px}
+    </style>
+    <script>
+        function fun1() {
+            var userPattern=/^[a-zA-Z0-9]{2,9}$/;
+            //alert(document.getElementById("username").value);
+            //
+            // (document.getElementById("username").value)
+            if(!userPattern.test(document.getElementById("username").value)){
+                document.getElementById("tip01").style="display:block";
+            }else {
+                document.getElementById("tip01").style="diplay:none";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <table border="1px">
+        <form>
+            <tbody>
+            <!--第一行-->
+            <tr>
+                <td>用户名</td>
+                <td><input id="username" type="text" onblur="fun1()"></td>
+                <td><span id="tip01" style="display: none">&nbsp;&nbsp;用户名格式有误</span></td>
+            </tr>
+            <!--第二行-->
+            <tr>
+                <td>密&nbsp;&nbsp;&nbsp;码</td>
+                <td><input id="password" type="password"></td>
+                <td><span id="tip02" style="display: none">&nbsp;&nbsp;密码格式有误</span></td>
+            </tr>
+            <!--第三行-->
+            <tr>
+                <td></td>
+                <td><input type="checkbox">同意许可协议</td>
+                <td><input type="button" value="发送短信"></td>
+            </tr>
+            <!--第四行-->
+            <tr align="center">
+                <td><input type="submit" value="注册"></td>
+                <td><input type="reset"></td>
+            </tr>
+
+            </tbody>
+        </form>
+
+    </table>
+</body>
+</html>
